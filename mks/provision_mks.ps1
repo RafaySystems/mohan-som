@@ -4,38 +4,39 @@
 
 #Step 1: Populate project and cluster information
 
-$projectname = 'poc2'            # The name of the Rafay project that will be created. Example: devproject
-$clustername = 'mkscluster2'            # The name of the EKS cluster that will be created. Example: cluster1
+$projectname = ''            # The name of the Rafay project that will be created. Example: devproject
+$clustername = ''            # The name of the EKS cluster that will be created. Example: cluster1
 
-$clusterlocation = 'sanjose-us'
-$kubernetesversion = 'v1.23.8'
-$operatingsystemversion = 'Ubuntu20.04'
-$nodehostname = 'tim2'
-$sshipaddress = '129.146.40.219'
-$sshkeyfile = 'ssh-key-2022-08-08.key'
-$sshuser = 'ubuntu'
+$clusterlocation = ''        # The cluster location. Example: 
+$kubernetesversion = ''      # The kubernetes version installed on teh cluser. Example: 
+$operatingsystemversion = '' # Example: 
+$nodehostname = ''           # The node hostname of the node in the cluster. Example: 
+$sshipaddress = ''           # The public IP address of the node which has SSH access: Example: 
+$sshkeyfile = ''             # The name of the SSH private key file located in the "cluster" directory. Example: 
+$sshuser = ''                # The username of an SSH user. Example: 
 
 #Step 2: Define users to be created in the Rafay Org
 
-$useremail1 = 'bob@example.com'             # Email address of the user. Example: bob@example.com
-$userinfo1 = 'Bob,Doe,4089382092'              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
+$useremail1 = ''             # Email address of the user. Example: bob@example.com
+$userinfo1 = ''              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
 
-$useremail2 = 'bob1@example.com'             # Email address of the user. Example: bob@example.com
-$userinfo2 = 'Bob1,Doe,4089382092'              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
+$useremail2 = ''             # Email address of the user. Example: bob@example.com
+$userinfo2 = ''              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
 
 #Step 3: Populate AWS S3 bucket information for an existing S3 bucket.  This location will be used to store backups
 
-$bucketname = 'tim-eks-gitops'             # The name of the S3 bucket defined in AWS. Example: tim-eks-gitops
-$bucketregion = 'us-west-2'           # The AWS region where the bucket resides. Example: us-west-2
-$awsaccountnumber = '679196758854'       # The AWS account number the bucket is associated with. Example: 679196758877
+$bucketname = ''             # The name of the S3 bucket defined in AWS. Example: tim-eks-gitops
+$bucketregion = ''           # The AWS region where the bucket resides. Example: us-west-2
+$awsaccountnumber = ''       # The AWS account number the bucket is associated with. Example: 679196758877
+$accesskey = ''              # The AWS access key of the IAM user with the correct permissions for S3 bucket access. Example: 
+$secretkey = ''              # The AWS secret key of the IAM user. Example: 
+
 
 ################################################
 #DO NOT EDIT BELOW THIS LINE
 ################################################
 
 $cliconfig=$args[0]
-
-$backuparn = 'arn:aws:iam::' + $awsaccountnumber +':role/rafay-backuprestore-role-'+ $clustername
 
 #groups
 $groupname1 = 'Project Admins'
@@ -215,7 +216,7 @@ write-host "$time - Creating blueprint with OPA PSP-Restricted policy"
 #create backup cloud credential
 $time = get-date -format hh:mm:ss
 write-host "$time - Creating backup cloud credential for S3 bucket access" 
-.\rctl create credential aws backup-cloud-credential --cred-type data-backup --role-arn $backuparn -p $projectname  
+.\rctl create credential aws backup-cloud-credential --cred-type data-backup --access-key $accesskey --secret-key $secretkey -p $projectname 
 sleep 10 
 
 #create backup location control plane

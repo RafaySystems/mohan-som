@@ -1,11 +1,11 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: aks-blueprint
+  name: mks-blueprint
   project: poc
 spec:
   base:
-    name: default-aks
+    name: default
     version: 1.15.0
   defaultAddons:
     enableIngress: true
