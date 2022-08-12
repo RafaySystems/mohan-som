@@ -10,4 +10,5 @@ jobs:
       - name: Check out repo        
         uses: actions/checkout@v3
       - run: |
-          ./mks/provision_mks.ps1 '${{ secrets.rafaysecret }}'
+          ./mks/provision_mks.ps1 '${{ secrets.rafaysecret }}' '${{ secrets.awssecret }}'
+

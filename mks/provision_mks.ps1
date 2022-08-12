@@ -29,7 +29,6 @@ $bucketname = ''             # The name of the S3 bucket defined in AWS. Example
 $bucketregion = ''           # The AWS region where the bucket resides. Example: us-west-2
 $awsaccountnumber = ''       # The AWS account number the bucket is associated with. Example: 679196758877
 $accesskey = ''              # The AWS access key of the IAM user with the correct permissions for S3 bucket access. Example: 
-$secretkey = ''              # The AWS secret key of the IAM user. Example: 
 
 
 ################################################
@@ -37,6 +36,7 @@ $secretkey = ''              # The AWS secret key of the IAM user. Example:
 ################################################
 
 $cliconfig=$args[0]
+$$secretkey=$args[1]
 
 #groups
 $groupname1 = 'Project Admins'
