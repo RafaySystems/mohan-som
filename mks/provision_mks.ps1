@@ -7,13 +7,13 @@
 $projectname = ''            # The name of the Rafay project that will be created. Example: devproject
 $clustername = ''            # The name of the EKS cluster that will be created. Example: cluster1
 
-$clusterlocation = ''        # The cluster location. Example: 
-$kubernetesversion = ''      # The kubernetes version installed on teh cluser. Example: 
-$operatingsystemversion = '' # Example: 
-$nodehostname = ''           # The node hostname of the node in the cluster. Example: 
-$sshipaddress = ''           # The public IP address of the node which has SSH access: Example: 
-$sshkeyfile = ''             # The name of the SSH private key file located in the "cluster" directory. Example: 
-$sshuser = ''                # The username of an SSH user. Example: 
+$clusterlocation = ''        # The cluster location. Example: sanjose-us
+$kubernetesversion = ''      # The kubernetes version installed on teh cluser. Example: v1.23.8
+$operatingsystemversion = '' # The operating system version of the cluster node. Example: Ubuntu20.04'
+$nodehostname = ''           # The node hostname of the node in the cluster. Example: node1
+$sshipaddress = ''           # The public IP address of the node which has SSH access: Example: 129.146.199.138
+$sshkeyfile = ''             # The name of the SSH private key file located in the "cluster" directory. Example: ssh-key-2022-08-12.key
+$sshuser = ''                # The username of an SSH user. Example: ubuntu
 
 #Step 2: Define users to be created in the Rafay Org
 
@@ -28,7 +28,7 @@ $userinfo2 = ''              # The users information in the following format: <U
 $bucketname = ''             # The name of the S3 bucket defined in AWS. Example: tim-eks-gitops
 $bucketregion = ''           # The AWS region where the bucket resides. Example: us-west-2
 $awsaccountnumber = ''       # The AWS account number the bucket is associated with. Example: 679196758877
-$accesskey = ''              # The AWS access key of the IAM user with the correct permissions for S3 bucket access. Example: 
+$accesskey = ''              # The AWS access key of the IAM user with the correct permissions for S3 bucket access. Example: AKIAZ4I2ICNDC3HG6F51
 
 
 ################################################
@@ -36,7 +36,7 @@ $accesskey = ''              # The AWS access key of the IAM user with the corre
 ################################################
 
 $cliconfig=$args[0]
-$$secretkey=$args[1]
+$secretkey=$args[1]
 
 #groups
 $groupname1 = 'Project Admins'
