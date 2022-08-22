@@ -1,39 +1,41 @@
-﻿################################################
+################################################
 #   Populate Variables
 ################################################
 
 #Step 1: Populate project and cluster information
 
-$projectname = ''            # The name of the Rafay project that will be created. Example: devproject
-$clustername = ''            # The name of the EKS cluster that will be created. Example: cluster1
-$azureregion = ''            # The Azure region where the AKS cluster will be created.  Example: northcentralus
-$azureresourcegroup = ''     # The Azure of an existing resource group where the AKS cluster will be created.  Example: resourcegroup1
+$projectname = 'aks'            # The name of the Rafay project that will be created. Example: devproject
+$clustername = 'akscluster1'            # The name of the EKS cluster that will be created. Example: cluster1
+$azureregion = 'northcentralus'              # The Azure region where the AKS cluster will be created.  Example: northcentralus
+$azureresourcegroup = 'RafayRG-Tim'          # The Azure of an existing resource group where the AKS cluster will be created.  Example: resourcegroup1
 
 #step 2: Setup the Azure service: https://docs.rafay.co/clusters/aks/azure_setup/ and then populate the needed variables below.
 
-$azuretenantid = ''          # The Azure tenant ID  Example: 38d77531-9d10-484f-9c1d-3e3484cd9c77
-$azuresubscriptionid = ''    # The Azure subscription ID.  Example: a2252eb2-7a25-432b-a5ec-e18eba6f2677
-$azureclientid = ''          # The Azure client ID.  Example: 8932bf95-f213-4acc-99c8-f8eb5048c977
-$azureclientsecret = ''      # The Azure client secret.  Example: 2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWw77=
+$azuretenantid = '38d77531-9d10-484f-9c1d-3e3484cd9c34'                  # The Azure tenant ID  Example: 38d77531-9d10-484f-9c1d-3e3484cd9c34
+$azuresubscriptionid = 'a2252eb2-7a25-432b-a5ec-e18eba6f26b1'            # The Azure subscription ID.  Example: a2252eb2-7a25-432b-a5ec-e18eba6f26b1
+$azureclientid = '8932bf95-f213-4acc-99c8-f8eb5048c9eb'                  # The Azure client ID.  Example: 8932bf95-f213-4acc-99c8-f8eb5048c9eb
+$azureclientsecret = '2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWwPQ='      # The Azure client secret.  Example: 2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWwPQ=
   
 
 #Step 3: Define users to be created in the Rafay Org
 
-$useremail1 = ''             # Email address of the user. Example: bob@example.com
-$userinfo1 = ''              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
+$useremail1 = 'bob@example.com'             # Email address of the user. Example: bob@example.com
+$userinfo1 = 'Bob,Doe,4089382092'              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
 
-$useremail2 = ''             # Email address of the user. Example: bob@example.com
-$userinfo2 = ''              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
+$useremail2 = 'bob1@example.com'             # Email address of the user. Example: bob@example.com
+$userinfo2 = 'Bob1,Doe,4089382092'              # The users information in the following format: <User First Name>,<User Last Name>, <User phone number>. Example: Bob,Doe,4089382092
 
 #Step 4: Populate the Azure storage information.  This location will be used to store backups
 
-$storageaccountname = ''     # The name of the Azure storage account: rafaysatim1
-$storageaccountregion = ''   # The name of the azure region where the storage account resides: northcentralus
-$azurecontainter = ''        # The name of the Azure storage container in the storage account: timtestcontainer1
+$storageaccountname = 'rafaysatim1'             # The name of the Azure storage account: rafaysatim1
+$storageaccountregion = 'northcentralus'        # The name of the azure region where the storage account resides: northcentralus
+$azurecontainter = 'timtestcontainer1'          # The name of the Azure storage container in the storage account: timtestcontainer1
 
 ################################################
 #DO NOT EDIT BELOW THIS LINE
 ################################################
+
+
 
 $cliconfig=$args[0]
 
