@@ -4,8 +4,8 @@
 
 #Step 1: Populate project and cluster information
 
-$projectname = 'aks'            # The name of the Rafay project that will be created. Example: devproject
-$clustername = 'akscluster1'            # The name of the EKS cluster that will be created. Example: cluster1
+$projectname = 'aks-demo'            # The name of the Rafay project that will be created. Example: devproject
+$clustername = 'aksdemocluster1'            # The name of the EKS cluster that will be created. Example: cluster1
 $azureregion = 'northcentralus'              # The Azure region where the AKS cluster will be created.  Example: northcentralus
 $azureresourcegroup = 'RafayRG-Tim'          # The Azure of an existing resource group where the AKS cluster will be created.  Example: resourcegroup1
 
