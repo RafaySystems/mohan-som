@@ -14,7 +14,7 @@ $azureresourcegroup = 'RafayRG-Tim'          # The Azure of an existing resource
 $azuretenantid = '38d77531-9d10-484f-9c1d-3e3484cd9c34'                  # The Azure tenant ID  Example: 38d77531-9d10-484f-9c1d-3e3484cd9c34
 $azuresubscriptionid = 'a2252eb2-7a25-432b-a5ec-e18eba6f26b1'            # The Azure subscription ID.  Example: a2252eb2-7a25-432b-a5ec-e18eba6f26b1
 $azureclientid = '8932bf95-f213-4acc-99c8-f8eb5048c9eb'                  # The Azure client ID.  Example: 8932bf95-f213-4acc-99c8-f8eb5048c9eb
-$azureclientsecret = '2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWwPQ='      # The Azure client secret.  Example: 2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWwPQ=
+$azureclientsecret = ''      # The Azure client secret.  Example: 2Ndfoaoi6FibxBtIWY3sq9Ka2/O1tTQxE0eLzGAWwPQ=
   
 
 #Step 3: Define users to be created in the Rafay Org
